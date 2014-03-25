@@ -17,10 +17,9 @@ echo '<!DOCTYPE html>
 
 cat `dirname $0`/swiss.css
 
-sed 's/(\(.*\).md)/(\1.html)/g' $INPUT_FILENAME > .tmp.md
-
+sed 's/(\(.*\).md)/(\1.html)/g' $INPUT_FILENAME > .tmp_md
 
 echo '</style></head><body>'
-pandoc  -f markdown -t html .tmp.md
+pandoc  -f markdown -t html .tmp_md
 echo '</body></html>'
 ) > $OUTPUT_FILENAME
