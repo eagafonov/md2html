@@ -15,7 +15,8 @@ echo '<!DOCTYPE html>
     <meta charset="utf-8">
     <style type="text/css" source=''>'
 
-cat `dirname $0`/swiss.css
+    
+cat $(dirname $(readlink $0))/swiss.css
 
 sed 's/(\(.*\).md)/(\1.html)/g' $INPUT_FILENAME > .tmp_md
 
