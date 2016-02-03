@@ -11,7 +11,7 @@ md2html
  * [python-markdown](https://pypi.python.org/pypi/Markdown) - пакет для работы с Markdown в python. 
    Используется для генерации оглавления.
 
-Эта версия README доступна в виде сгенерированного [html](http://example.org/update_me)
+Эта версия README доступна в виде сгенерированного [html](http://eagafonov.github.io/md2html/README.html)
 
 
 
