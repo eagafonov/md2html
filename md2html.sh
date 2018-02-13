@@ -15,6 +15,14 @@ OUTPUT_FILENAME=${BASE_NAME}.html
 
 echo "OUTPUT_FILENAME=$OUTPUT_FILENAME"
 
+if [ -f 'style.css' ]; then
+    STYLE_CSS='style.css'
+else
+    STYLE_CSS=$(dirname $(readlink -m $0))/swiss.css
+fi
+
+echo "style: $STYLE_CSS"
+
 (
 echo '<!DOCTYPE html>
 <html lang="en">
@@ -23,8 +31,7 @@ echo '<!DOCTYPE html>
     <meta charset="utf-8">
     <style type="text/css" source=''>'
 
-    
-cat $(dirname $(readlink -m $0))/swiss.css
+cat ${STYLE_CSS}
 
 sed 's/(\(.*\).md)/(\1.html)/g' $INPUT_FILENAME > .tmp_md
 
