@@ -12,6 +12,8 @@ fi
 
 # replace .md with .html
 OUTPUT_FILENAME=${BASE_NAME}.html
+TMP_MD=.tmp-${BASE_NAME}-md
+
 
 echo "OUTPUT_FILENAME=$OUTPUT_FILENAME"
 
@@ -33,9 +35,9 @@ echo '<!DOCTYPE html>
 
 cat ${STYLE_CSS}
 
-sed 's/(\(.*\).md)/(\1.html)/g' $INPUT_FILENAME > .tmp_md
+sed 's/(\(.*\).md)/(\1.html)/g' $INPUT_FILENAME > $TMP_MD
 
 echo '</style></head><body>'
-pandoc  -f markdown -t html .tmp_md
+pandoc  -f markdown -t html $TMP_MD
 echo '</body></html>'
 ) > $OUTPUT_FILENAME
